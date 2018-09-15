@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Time!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/trainStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+</head>
+<body>
+    <br>
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Train Arrival Times!</h1>
+                      <p class="lead">Add a train to see when it will next arrive!</p>
+                      <p class="lead">All Aboard!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6>Current Train Schedule</h6>
+                    <table class="table table-sm table-hover" id="train-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody id="train-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row" id="trainimg-row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <img src="assets/images/snow-train.jpg" id="train-image">
+            <button id="add-train">Click to add a Train!</button>
+        </div>
+
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row" id="form-row">
+        <div class="col-sm-1"></div>
+    
+        <div class="col-sm-10">
+            <div class="container" id="form-container">
+                <div id="search-parameters">
+                    <h6 class="search-title">Add a Train!</h6>
+                        <form id="show-form">
+                            <div class="form-group">
+                                <label for="name-input">Train Name</label>
+                                    <input type="text" id="name-input"class="form-control">
+                            </div>
+                 
+                            <div class="form-group">
+                                <label for="destination-input">Destination</label>
+                                <input type="text" id="destination-input"class="form-control">
+                            </div>
+                 
+                            <div class="form-group">
+                                <label for="first-time-input">First Train Time (HH:mm)</label>
+                                <input type="time" id="first-time-input"class="form-control">
+                            </div>
+                 
+                            <div class="form-group">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input type="text" id="frequency-input"class="form-control">
+                            </div>
+                 
+                            <br>
+                 
+                                <!-- Button triggers new train to be added -->
+                            <input class="btn btn-secondary" id="submit" type="submit" value="submit">
+                        </form>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-sm-1"></div>
+    </div>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/train.js"></script>
+</body>
+</html>
